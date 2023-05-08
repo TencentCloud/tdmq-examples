@@ -1,0 +1,14 @@
+server:
+  port: 8081
+pulsar:
+  # 命名空间名称
+  namespace: ns_stabletest
+  # 服务接入地址
+  service-url: pulsar://172.27.16.34:6650
+  # 授权角色密钥
+  token-auth-value: eyJrZXlJZCI6ImRlZmF1bHRfa2V5SWQiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJzdXBlcnVzZXIifQ.dYcCfp4XrdWRKdKaWylobY-_xEExfRCi1pMvNyZXbqU
+  # 集群id
+  tenant: pulsar-3w8eerw8kjrx
+logging:
+  level:
+    root: INFO
