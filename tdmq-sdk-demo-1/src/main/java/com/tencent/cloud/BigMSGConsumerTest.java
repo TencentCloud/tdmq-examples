@@ -71,6 +71,7 @@ public class BigMSGConsumerTest {
             Message msg = consumer.receive();
             System.out.println("消息大小为:"+msg.getData().length/1024/1024+"MB");
             System.out.printf("%s 消费完成 第%d条 msgid:%s tag:%s key:%s sequenceID:%d\n ", LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")),j+1,msg.getMessageId(),msg.getProperties(),msg.getKey(),msg.getSequenceId());
+            consumer.negativeAcknowledge(msg);
             consumer.acknowledge(msg);
             System.out.printf("%s ask完成 第%d条 msgid:%s \n ",LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSS")),j+1,msg.getMessageId());
         }
